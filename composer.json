@@ -22,14 +22,6 @@
       "NunoPress\\Laravel\\Package\\Website\\": "src/"
     }
   },
-  "scripts": {
-    "post-install-cmd": [
-      "php artisan vendor:publish"
-    ],
-    "post-update-cmd": [
-      "php artisan vendor:publish"
-    ]
-  },
   "extra": {
     "branch-alias": {
       "dev-master": "1.1-dev"
