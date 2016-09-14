@@ -1,0 +1,30 @@
+{
+  "name": "nunopress/laravel-website-package",
+  "description": "Interact with WordPress Rest API or any other Rest API service.",
+  "license": "MIT",
+  "homepage": "http://nunopress.com",
+  "support": {
+    "issues": "https://github.com/nunopress/laravel-website-package/issues",
+    "source": "https://github.com/nunopress/laravel-website-package"
+  },
+  "authors": [
+  {
+    "name": "NunoPress LLC",
+    "email": "hello@nunopress.com"
+  }
+  ],
+  "require": {
+    "laravel/framework": "5.3.*",
+    "guzzlehttp/guzzle": "^6.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "NunoPress\\Laravel\\Package\\Website\\": "src/"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.1-dev"
+    }
+  }
+}
