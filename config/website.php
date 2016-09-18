@@ -21,8 +21,10 @@ return [
         'post' => [
             'method' => 'POST',
             'uri' => 'post',
-            'form_params' => [
-                'name' => 'NunoPress'
+            'params' => [
+                'form_params' => [
+                    'name' => 'NunoPress'
+                ]
             ]
         ]
     ]

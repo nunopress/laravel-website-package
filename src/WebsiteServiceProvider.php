@@ -7,6 +7,7 @@ use Illuminate\Support\ServiceProvider;
 
 /**
  * Class WebsiteServiceProvider
+ *
  * @package NunoPress\Laravel\Package\Website
  */
 class WebsiteServiceProvider extends ServiceProvider
@@ -64,6 +65,8 @@ class WebsiteServiceProvider extends ServiceProvider
      */
     public function providers()
     {
-        return [];
+        return [
+            'website.http_client'
+        ];
     }
 }
