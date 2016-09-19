@@ -17,10 +17,9 @@ class WebsiteController extends BaseController
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function __invoke($page = 'index')
+    public function __invoke($page)
     {
         // Validate view
-        // todo: Not need to change the slash with dots, laravel done this.
         if (!\View::exists(sprintf('vendor.website.%s', $page))) {
             abort(404, sprintf('Website page {%s} not found.', $page));
         }
