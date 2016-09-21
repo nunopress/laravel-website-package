@@ -1,6 +1,6 @@
 {
   "name": "nunopress/laravel-website-package",
-  "description": "Interact with WordPress Rest API or any other Rest API service.",
+  "description": "Create a simple website with Templates and Config data.",
   "license": "MIT",
   "homepage": "http://nunopress.com",
   "support": {
@@ -14,8 +14,7 @@
   }
   ],
   "require": {
-    "laravel/framework": "5.3.*",
-    "guzzlehttp/guzzle": "^6.2"
+    "laravel/framework": "5.3.*"
   },
   "autoload": {
     "psr-4": {

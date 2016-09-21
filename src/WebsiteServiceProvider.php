@@ -51,13 +51,6 @@ class WebsiteServiceProvider extends ServiceProvider
     {
         // Merge package config with app config
         $this->mergeConfigFrom(self::PATH_CONFIG . '/website.php', 'website');
-
-        /**
-         * Register http client service
-         */
-        $this->app->bind('website.http_client', function () {
-            return new Client(config('website.http_client', []));
-        });
     }
 
     /**
@@ -65,8 +58,6 @@ class WebsiteServiceProvider extends ServiceProvider
      */
     public function providers()
     {
-        return [
-            'website.http_client'
-        ];
+        return [];
     }
 }

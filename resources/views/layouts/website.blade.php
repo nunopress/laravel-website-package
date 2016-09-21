@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>@yield('title') {{ config('website.title') }}</title>
+    <title>@if ($page->has('title')){{ $page->get('title') }} / @endif{{ $site->get('title') }}</title>
 
     <!-- Fonts -->
     <link href="//fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -70,20 +70,18 @@
 </head>
 <body>
 <div class="flex-center position-ref full-height">
-    @if (Route::has('login'))
-        <div class="top-right links">
-            <a href="{{ url('/login') }}">Login</a>
-            <a href="{{ url('/register') }}">Register</a>
-        </div>
-    @endif
+    <div class="top-right links">
+        <a href="{{ url('/login') }}">Login</a>
+        <a href="{{ url('/register') }}">Register</a>
+    </div>
 
     <div class="content">
         <div class="title m-b-md">
-            {{ config('website.title') }}
+            {{ $site->get('title') }} {{ $site->get('noexists') }}
         </div>
 
         <div class="description m-b-md">
-            {{ config('website.description') }}
+            {{ $site->get('description') }}
         </div>
 
         <div class="links">

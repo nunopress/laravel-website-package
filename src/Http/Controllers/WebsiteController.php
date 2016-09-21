@@ -3,7 +3,7 @@
 namespace NunoPress\Laravel\Package\Website\Http\Controllers;
 
 use Illuminate\Routing\Controller as BaseController;
-use NunoPress\Laravel\Package\Website\ApiCollection;
+use Illuminate\Support\Collection;
 
 /**
  * Class WebsiteController
@@ -13,7 +13,7 @@ use NunoPress\Laravel\Package\Website\ApiCollection;
 class WebsiteController extends BaseController
 {
     /**
-     * @param string $page
+     * @param $page
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
@@ -24,10 +24,14 @@ class WebsiteController extends BaseController
             abort(404, sprintf('Website page {%s} not found.', $page));
         }
 
-        $requestParams = config('website.http_request_params');
+        $websiteData = new Collection(config('website.site', []));
+        $pageData = new Collection(config(sprintf('website.pages.%s', $page), []));
 
-        $data = new ApiCollection($requestParams);
+        $data = [
+            'site' => $websiteData,
+            'page' => $pageData
+        ];
 
-        return view('vendor.website.' . $page, $data->all());
+        return view('vendor.website.' . $page, $data);
     }
 }
